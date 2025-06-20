@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  background: url(logos/Background.webp);
+  overflow: hidden;
+  font-family: "Rubik Glitch", system-ui;
+  position: relative;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Purple nebula effect */
+.nebula {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      ellipse 400px 300px at 25% 40%,
+      rgba(138, 43, 226, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 300px 400px at 75% 60%,
+      rgba(75, 0, 130, 0.2) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 200px 200px at 60% 20%,
+      rgba(147, 0, 211, 0.15) 0%,
+      transparent 40%
+    );
+  z-index: 2;
+}
+
+canvas {
+  display: block;
+  cursor: grab;
+  position: relative;
+  z-index: 10;
+}
+canvas:active {
+  cursor: grabbing;
+}
+
+/* Text behind cube */
+.background-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Carme", sans-serif;
+  font-size: clamp(50px, 6vw, 100px);
+  font-weight: 300;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1.2;
+  color: transparent;
+  /* -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.7);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5),  */
+  /* 0 0 15px rgba(138, 43, 226, 0.6), 
+                   0 0 25px rgba(75, 0, 130, 0.6); */
+  background: linear-gradient(
+    90deg,
+    rgba(33, 32, 34, 0.9),
+    rgba(149, 0, 255, 0.8),
+    rgba(141, 77, 187, 0.8)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  animation: gradientShift 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background-text .line1 {
+  display: block;
+  margin-bottom: -10px;
+  font-size: 8rem;
+  font-family: "Ceviche One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.background-text .line2 {
+  display: block;
+  font-size: 0.6em;
+  opacity: 0.6;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 30px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 15;
+  font-family: "Carme", sans-serif;
+}

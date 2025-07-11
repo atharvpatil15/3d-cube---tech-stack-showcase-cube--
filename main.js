@@ -201,12 +201,12 @@
   }
   
   const logoPaths = [
-    'logos/html.png',
-    'logos/css.png', 
-    'logos/javascript.png',
-    'logos/nodejs.png',
-    'logos/react.png',
-    'logos/mongo-db.png'
+    'logos/html_cube.png',
+    'logos/css_cube.png', 
+    'logos/js_cube.png',
+    'logos/nodejs_cube.png',
+    'logos/react_cube.png',
+    'logos/mongo_cube.png'
   ];
   
   const geometry = createRoundedBoxGeometry(2.5, 2.5, 2.5, 0.4, 20);

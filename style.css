@@ -18,6 +18,8 @@ body {
   }
 }
 
+
+
 /* Purple nebula effect */
 .nebula {
   position: absolute;
@@ -81,6 +83,7 @@ canvas:active {
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
+  background-clip: text;
   animation: gradientShift 2s ease-in-out infinite;
 }
 
